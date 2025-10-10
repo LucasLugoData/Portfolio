@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lucas Ariel Lugo Vera | AI Engineer & Fullstack Developer Portfolio</title>
+  <meta property="og:site_name" content="Lucas Lugo | AI & Fullstack Engineer">
+  <link rel="canonical" href="https://lucaslugo.com/">
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="shortcut icon" href="/favicon.ico" />
@@ -11,6 +13,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lucas Ariel Lugo Vera | AI Engineer & Fullstack Developer Portfolio">
+  <meta property="og:description" content="Portfolio de Lucas Lugo: Ingeniería de Datos, IA y desarrollo Fullstack.">
+  <meta property="og:url" content="https://lucaslugo.com/">
   <style>
     @keyframes fadeIn {
       from { opacity: 0; filter: blur(5px); transform: translateY(20px); }
@@ -299,6 +305,10 @@
   .experience-desc{
      margin-top: 0;
   margin-bottom: 0.5em;
+  }
+
+    .education-title{
+    font-size: 18px;
   }
     
     @media (min-width: 768px) {
@@ -741,6 +751,27 @@
       align-items: center;
       justify-content: center;
     }
+    @media (max-width: 767px) {
+  #mobile-timeline {
+    height: 60vh; 
+
+  }
+     @media (max-width: 600px) {
+  #mobile-timeline {
+     transform: scale(0.8);
+
+  }
+
+
+}
+     @media (max-width: 400px) {
+  #mobile-timeline {
+     transform: scale(0.65);
+
+  }
+
+
+}
   </style>
 </head>
 <body>
@@ -817,11 +848,9 @@ Mi perfil combina la Ingeniería de Datos, el Desarrollo Fullstack y la Intelige
               <span>Inteligencia Artificial</span>
             </div>
             <div class="skill-list">
-              <div class="skill-item">Python</div>
               <div class="skill-item">PyTorch</div>
               <div class="skill-item">TensorFlow</div>
               <div class="skill-item">scikit-learn</div>
-              <div class="skill-item">LLMs</div>
               <div class="skill-item">OpenAI API</div>
             </div>
           </div>
@@ -835,8 +864,6 @@ Mi perfil combina la Ingeniería de Datos, el Desarrollo Fullstack y la Intelige
             <div class="skill-list">
               <div class="skill-item">React</div>
               <div class="skill-item">Next.js</div>
-              <div class="skill-item">TypeScript</div>
-              <div class="skill-item">Tailwind CSS</div>
               <div class="skill-item">HTML/CSS</div>
               <div class="skill-item">JavaScript</div>
             </div>
@@ -851,10 +878,8 @@ Mi perfil combina la Ingeniería de Datos, el Desarrollo Fullstack y la Intelige
             <div class="skill-list">
               <div class="skill-item">Node.js</div>
               <div class="skill-item">Express</div>
-              <div class="skill-item">FastAPI</div>
               <div class="skill-item">PostgreSQL</div>
               <div class="skill-item">MongoDB</div>
-              <div class="skill-item">GraphQL</div>
             </div>
           </div>
           
@@ -865,12 +890,10 @@ Mi perfil combina la Ingeniería de Datos, el Desarrollo Fullstack y la Intelige
               <span>Ingeniería de Datos</span>
             </div>
             <div class="skill-list">
-              <div class="skill-item">ETL/ELT</div>
-              <div class="skill-item">Apache Airflow</div>
+              <div class="skill-item">ETL</div>
               <div class="skill-item">Pandas</div>
-              <div class="skill-item">BigQuery</div>
               <div class="skill-item">Web Scraping</div>
-              <div class="skill-item">AWS/GCP</div>
+              <div class="skill-item">AWS</div>
             </div>
           </div>
         </div>
@@ -883,7 +906,7 @@ Mi perfil combina la Ingeniería de Datos, el Desarrollo Fullstack y la Intelige
   <!-- Development Cycle Section -->
   <section id="development-cycle" class="w-full overflow-visible">
     <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-16">
+        <div class="text-center">
             <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">
                 Experiencia en desarrollo end-to-end
             </h2>
@@ -912,7 +935,7 @@ Desde la recolección de datos hasta el despliegue en producción
         </div>
 
         <!-- Mobile: Vertical Timeline -->
-        <div id="mobile-timeline" class="md:hidden relative mb-16 w-full overflow-visible" style="height: 120vh;">
+        <div id="mobile-timeline" class="md:hidden relative mb-16 w-full overflow-visible">
             <svg class="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
                 <defs>
                     <linearGradient id="verticalPathGradient" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -1001,7 +1024,7 @@ Desde la recolección de datos hasta el despliegue en producción
           </div>
           <div class="flex-grow ml-4 flex flex-col justify-center">
             <div class="flex items-center justify-between gap-x-2 text-base">
-              <h3 class="font-semibold leading-none text-xs sm:text-sm">
+              <h3 class="education-title font-semibold leading-none">
                 Grado en Ingeniería de Datos
               </h3>
               <div class="text-xs sm:text-sm">2022 - 2027</div>
@@ -1021,7 +1044,7 @@ Desde la recolección de datos hasta el despliegue en producción
           </div>
           <div class="flex-grow ml-4 flex flex-col justify-center">
             <div class="flex items-center justify-between gap-x-2 text-base">
-              <h3 class="font-semibold leading-none text-xs sm:text-sm">
+              <h3 class="font-semibold leading-none education-title">
                 Especialización en Inteligencia Artificial
               </h3>
               <div class="text-xs sm:text-sm">2021 - 2022</div>
@@ -1041,7 +1064,7 @@ Desde la recolección de datos hasta el despliegue en producción
           </div>
           <div class="flex-grow ml-4 flex flex-col justify-center">
             <div class="flex items-center justify-between gap-x-2 text-base">
-              <h3 class="font-semibold leading-none text-xs sm:text-sm">
+              <h3 class="font-semibold leading-none education-title">
                 Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)
               </h3>
               <div class="text-xs sm:text-sm">2020 - 2022</div>
@@ -1061,7 +1084,7 @@ Desde la recolección de datos hasta el despliegue en producción
           </div>
           <div class="flex-grow ml-4 flex flex-col justify-center">
             <div class="flex items-center justify-between gap-x-2 text-base">
-              <h3 class="font-semibold leading-none text-xs sm:text-sm">
+              <h3 class="font-semibold leading-none education-title">
                 Técnico Superior en Desarrollo de Aplicaciones Web (DAW)
               </h3>
               <div class="text-xs sm:text-sm">2018 - 2020</div>
@@ -1285,32 +1308,31 @@ Desde la recolección de datos hasta el despliegue en producción
                     </div>
                 `;
                 desktopTimeline.appendChild(desktopPhaseElement);
+// --- Renderizado para móvil ---
+const mobilePosition = getVerticalPhasePosition(index);
+const isLeft = index % 2 === 0;
+const mobilePhaseElement = document.createElement('div');
+mobilePhaseElement.className = `absolute transform -translate-x-1/2 -translate-y-1/2 group transition-all duration-300`
+mobilePhaseElement.style.left = `${mobilePosition.x}%`;
+mobilePhaseElement.style.top = `${mobilePosition.y}%`;
+mobilePhaseElement.innerHTML = `
+    <div class="w-4 h-4 rounded-full ${phase.bgColor} border-2 border-white/90 shadow-lg 
+                z-20 relative cursor-pointer dark:border-gray-900"></div>
 
-                // Renderizado para móvil
-                const mobilePosition = getVerticalPhasePosition(index);
-                const isLeft = index % 2 === 0;
-                const mobilePhaseElement = document.createElement('div');
-                mobilePhaseElement.className = `absolute transform -translate-x-1/2 -translate-y-1/2 group transition-all duration-300`
-                mobilePhaseElement.style.left = `${mobilePosition.x}%`;
-                mobilePhaseElement.style.top = `${mobilePosition.y}%`;
-                mobilePhaseElement.innerHTML = `
-                    <div class="w-4 h-4 rounded-full ${phase.bgColor} border-2 border-white/90 shadow-lg z-20 relative cursor-pointer dark:border-gray-900"></div>
-                    <div class="absolute top-1/2 transform -translate-y-1/2 ${isLeft ? 'right-8' : 'left-8'} p-3 w-56 rounded-xl shadow-lg bg-white backdrop-blur-sm">
-                        <div class="flex items-center gap-2 mb-2 ${phase.color}">
-                            <div class="p-1.5 rounded-lg bg-current flex-shrink-0">
-                                <div class="text-white">${phase.icon}</div>
-                            </div>
-                            <h3 class="text-sm font-semibold text-gray-900">${phase.title}</h3>
-                        </div>
-                        <div class="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-semibold text-gray-700 transition-colors hover:bg-gray-200 mb-2">
-                            ${phase.badge}
-                        </div>
-                        <ul class="space-y-1 text-xs text-gray-600">
-                            ${phase.items.map(item => `<li class="flex items-start"><span class="text-gray-400 mr-2 flex-shrink-0">•</span><span>${item}</span></li>`).join('')}
-                        </ul>
-                    </div>
-                `;
-                mobileTimeline.appendChild(mobilePhaseElement);
+    <!-- Solo la vista compacta (sin hover) -->
+    <div class="absolute top-1/2 transform -translate-y-1/2 
+                ${isLeft ? 'right-8' : 'left-8'} p-3 w-48 rounded-xl 
+                shadow-lg bg-white backdrop-blur-sm">
+        <div class="flex items-center gap-2 ${phase.color}">
+            <div class="p-1.5 rounded-lg bg-current">
+                <div class="text-white">${phase.icon}</div>
+            </div>
+            <h3 class="text-sm font-semibold text-gray-900">${phase.title}</h3>
+        </div>
+    </div>
+`;
+mobileTimeline.appendChild(mobilePhaseElement);
+
             });
         };
 
