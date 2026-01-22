@@ -39,36 +39,78 @@
       box-sizing: border-box;
       font-family: "EthosNova", sans-serif;
     }
-
-    body {
-      background: #fff;
-      color: #000;
-      overflow-x: hidden;
-      font-family: 'Inter', sans-serif;
+body {
+  background-color: #fefdfd; /* Un gris casi blanco, menos agresivo a la vista */
+  /* El patrón de puntos sutil para toda la página */
+  background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+  background-size: 24px 24px;
+  
+  color: #000;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+}
+        /* Degradado para suavizar el corte del hero */
+    /* --- FIX HERO: FONDO DE PUNTOS PARA QUE NO SE VEA VACÍO --- */
+    .hero {
+      min-height: 100vh; /* Un poco menos de altura para que se vea contenido abajo */
+      display: flex;
+      justify-content: center; /* Centrado mejorado */
+      align-items: center;
+      margin: auto;
+      width: 100%;
+      position: relative;
+      /* Patrón sutil para llenar el vacío */
+      background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+      background-size: 24px 24px;
     }
 
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      justify-content: start;
-      align-items: center;
+    /* Degradado para suavizar el corte del hero */
+    .hero::after {
+        content: "";
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        height: 100px;
+        background: linear-gradient(to top, #fff, transparent);
+        pointer-events: none;
+    }
 
-      margin: auto;
-      width: 60dvw;
+    .hero-container {
+        width: 65dvw;
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+        z-index: 10;
+    }
+
+    /* En movil, columna */
+    @media (max-width: 900px) {
+        .hero-container { flex-direction: column-reverse; text-align: center; width: 90dvw; gap: 2rem; }
+        .hero-image-wrapper { margin: 0 auto; }
+        .buttons { justify-content: center; }
+        .hero { padding-top: 4rem; }
     }
 
     .hero-content {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      gap: 1.5rem;
+      flex: 1;
     }
 
-    .hero img {
-      width: 220px;
-      height: 220px;
+    /* FOTO DEL HERO (DESCOMENTADA Y MEJORADA) */
+    .hero-image-wrapper {
+        flex: 0 0 280px;
+        position: relative;
+    }
+    .hero-image-wrapper img {
+      width: 280px;
+      height: 280px;
       object-fit: cover;
-      border-radius: 50%;
-      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      border-radius: 20px; /* Un poco menos redondo, más moderno */
+      box-shadow: 20px 20px 0px rgba(0,0,0,0.05); /* Sombra sólida */
+      border: 1px solid #eee;
+      opacity: 0;
+      animation: fadeIn 1.5s forwards;
     }
 
     .title {
@@ -81,21 +123,21 @@
     }
 
     .subtitle {
-      font-size: 2rem;
+      font-size: 1.5rem; /* Ajustado un poco */
       font-weight: 500;
       background: linear-gradient(90deg, #ec4899, #8b5cf6);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-top: -0.5rem;
       opacity: 0;
-      animation: fadeIn 1.5s forwards;
-      animation-delay: 0.4s;
+      animation: fadeIn 1.5s forwards 0.4s;
     }
-    .description{
+    .description {
       opacity: 0;
-      animation: fadeIn 1.5s forwards;
-      animation-delay: 0.6s;
-      font-size: 1rem;
+      animation: fadeIn 1.5s forwards 0.6s;
+      font-size: 1.1rem;
+      color: #242526;
+      max-width: 600px;
+      line-height: 1.6;
     }
 
     .buttons {
@@ -548,16 +590,27 @@
       --gap: 18px;
       font-family: "EthosNova", "Inter", system-ui, -apple-system, 'Segoe UI', sans-serif;
     }
+
+        .wrap {
+      max-width: 1100px;
+      margin: 0 auto 4rem auto;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 300px 1fr; /* Columna izq fija */
+      gap: 40px;
+    }
     
     .wrap {
-      max-width: 70vw;
-      margin: 36px auto;
+      max-width: 1100px;
+      margin: 0 auto 4rem auto;
       padding: 24px;
       display: grid;
       grid-template-columns: 320px 1fr;
-      gap: var(--gap);
+      gap: 40px;
       min-height: 100vh;
     }
+
+    
     
     @media (max-width: 820px) {
       .wrap {
@@ -569,15 +622,26 @@
       }
     }
 
-    /* Left column */
+    /* IZQUIERDA (PROFILE CARD) */
     .left {
       background: white;
-      border-radius: 14px;
-      padding: 22px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 14px;
+      border-radius: 20px;
+      padding: 30px;
+      border: 1px solid #f3f4f6;
+      height: fit-content;
+      text-align: center;
+      position: sticky;
+      top: 20px;
+    }
+
+
+    .photo-small {
+        width: 150px; height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto 1rem auto;
+        border: 4px solid white;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     }
     
     .photo {
@@ -626,15 +690,10 @@
       font-size: 12px;
     }
 
+
     /* Right column */
-    .right {
-      background: white;
-      border-radius: 14px;
-      padding: 22px;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
+    .right { display: flex; flex-direction: column; gap: 3rem; }
+
     
    /* .h2-style {
       margin: 0;
@@ -644,10 +703,10 @@
       -webkit-text-fill-color: transparent;
     }*/
     
-    p.bio {
-      color: var(--muted);
-      line-height: 1.55;
-      margin: 6px 0 0;
+   .bio {
+        color: #374151;
+        line-height: 1.8;
+        font-size: 1.05rem;
     }
 
     .lang-badges {
@@ -751,6 +810,55 @@
       align-items: center;
       justify-content: center;
     }
+    /* --- NUEVOS ESTILOS PARA PROYECTOS --- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.project-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden; /* Para que la imagen respete el borde redondeado */
+  border: 1px solid #f3f4f6;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.project-image {
+  height: 160px;
+  width: 100%;
+  position: relative;
+  /* Placeholder elegante por si no hay foto aun */
+  background: linear-gradient(45deg, #8b5cf6, #ec4899);
+  display: flex;
+  align-items: center; justify-content: center;
+}
+
+.project-image img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+
+.project-content { padding: 1.5rem; }
+
+.project-title {
+  font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem;
+  display: flex; justify-content: space-between; align-items: center;
+}
+
+.project-desc { color: #4b5563; font-size: 0.95rem; line-height: 1.5; margin-bottom: 1rem; }
+
+.project-links a {
+  color: #6b7280; font-size: 1.2rem; transition: color 0.2s;
+}
+.project-links a:hover { color: #111; }
     @media (max-width: 767px) {
   #mobile-timeline {
     height: 60vh; 
@@ -776,37 +884,43 @@
 </head>
 <body>
   <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <!-- Foto -->
-      <!--<img src="mef.fpng" alt="Lucas Lugo">-->
 
-      <!-- Nombre y Rol -->
-      <h1 class="title">Lucas Ariel Lugo Vera</h1>
-      <h2 class="subtitle h2-style">AI Engineer & Fullstack Developer</h2>
-      <h3 class="description"> Estudiante de Ingeniería de Datos especializado en Desarrollo Fullstack & Inteligencia Artificial.</h3>
-      <div class="button-cv"><button class="cv">Descargar CV</button></div>
-      <!-- Botones -->
-      <div class="buttons">
-        <!-- Botón de LinkedIn -->
-        <a href="https://www.linkedin.com/in/lucas-ariel-lugo-vera-21541b240/" class="social-btn-circle social-btn-linkedin">
-          <i class="fab fa-linkedin"></i>
-        </a>
+
+    <section class="hero">
+    <div class="hero-container">
         
-        <!-- Botón de GitHub -->
-        <a href="https://github.com/ArielusX" class="social-btn-circle social-btn-github">
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
+        <div class="hero-content">
+
+            
+            <h1 class="title">Lucas Ariel Lugo Vera</h1>
+            <h2 class="subtitle">AI Engineer & Fullstack Developer</h2>
+            <p class="description">
+              Estudiante de Ingeniería de Datos especializado en Desarrollo Fullstack & Inteligencia Artificial.</br>
+            
+          
+                Fusiono la capacidad de construcción del <b>Desarrollo Web</b> con el análisis de la <b>Ingeniería de Datos</b>.
+            </p>
+
+            <div class="buttons">
+                <button class="cv">Descargar CV</button>
+                <a href="https://www.linkedin.com/in/lucas-ariel-lugo-vera-21541b240/" class="social-btn-circle social-btn-linkedin"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/ArielusX" class="social-btn-circle social-btn-github"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+
+        <div class="hero-image-wrapper">
+             <img src="me.png" alt="Lucas Lugo">
+        </div>
+
     </div>
   </section>
 
   <!-- Profile Section -->
   <main class="wrap">
     <aside class="left">
-      <div class="photo" aria-hidden="true">
-        <img src="me.png" alt="Lucas Lugo">
-      </div>
+
+        <img src="me.png" class="photo-small" alt="Lucas Lugo">
+     
       <div class="name">Lucas Ariel Lugo Vera</div>
       <div class="role">AI Engineer & Fullstack Developer</div>
 
@@ -822,22 +936,24 @@
 
     <section class="right">
       <div>
-        <h2>Sobre mi</h2>
-        <p class="bio">Desarrollador especializado en Inteligencia Artificial e Ingeniería de Datos con experiencia en desarrollo full-stack.
+        <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 1rem;">Sobre mí</h2>
+<p class="bio">
 
-        </br>
-Mi perfil combina la Ingeniería de Datos, el Desarrollo Fullstack y la Inteligencia Artificial, con experiencia en proyectos que abarcan desde el diseño y despliegue de aplicaciones web hasta la implementación de modelos de Machine Learning y Deep Learning en entornos de producción.
+    Estudiante de Ingeniería de Datos, con Especialización en IA y Big Data, y Técnico Superior en DAM y DAW con <b>perfil en Bioinformática</b>.
 
-        </p>
+    <br><br>
+
+    Experiencia técnica en todo el ciclo de vida del software: desde el desarrollo web (Backend/Fullstack) y el entrenamiento de modelos de Machine Learning y Deep Learning, hasta su despliegue en producción.
+
+    <br><br>
+
+    Interés profesional en el sector financiero, desde la visualización de datos y modelos predictivos hasta tareas de DevOps.
+
+</p>
+
       </div>
 
-      <div>
-        <div class="muted">Idiomas</div>
-        <div class="lang-badges" style="margin-top:8px">
-          <div class="lang"><span class="flag">🇬🇧</span> Inglés</div>
-          <div class="lang"><span class="flag">🇪🇸</span> Español</div>
-        </div>
-      </div>
+
         <div>
         <div class="muted">Habilidades</div>
         <div class="skills-grid">
@@ -1094,6 +1210,55 @@ Desde la recolección de datos hasta el despliegue en producción
         </div>
       </a>
     </section>
+    <div style="margin-top: 2rem;"> 
+      <h2 class="text-xl font-bold">Formación</h2>
+        
+        <div class="projects-grid">
+
+            <article class="project-card">
+                <div class="project-image" style="background: linear-gradient(135deg, #1e1e2f, #3b3b58);">
+                    <i class="fas fa-chart-candlestick" style="color:white; font-size: 3rem; opacity: 0.5;"></i>
+                </div>
+                
+                <div class="project-content">
+                    <div class="project-title">
+                        <h3>Financial AI Dashboard</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/ArielusX" target="_blank"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <p class="project-desc">
+                        Visualización de mercados financieros de alto rendimiento. Motor de renderizado con <b>D3.js</b> para miles de velas sin lag, conectado a backend <b>FastAPI</b>.
+                    </p>
+                    <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                        <span class="pill">Python</span><span class="pill">D3.js</span><span class="pill">FastAPI</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-image" style="background: linear-gradient(135deg, #0f766e, #0e7490);">
+                     <i class="fas fa-network-wired" style="color:white; font-size: 3rem; opacity: 0.5;"></i>
+                </div>
+                
+                <div class="project-content">
+                    <div class="project-title">
+                        <h3>Bio-Data ETL & LLM</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/ArielusX" target="_blank"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <p class="project-desc">
+                        Pipeline de datos para limpiar datasets genómicos complejos. Integra un modelo <b>LLM local</b> (Mistral) para clasificar texto no estructurado.
+                    </p>
+                    <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                        <span class="pill">Pandas</span><span class="pill">Docker</span><span class="pill">LLMs</span>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+      </div>
   </div>
 
   <script>
