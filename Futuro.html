@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
-<head><meta charset="UTF-8">
+<head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lucas Ariel Lugo Vera | AI Engineer & Fullstack Developer Portfolio</title>
   <meta property="og:site_name" content="Lucas Lugo | AI & Fullstack Engineer">
@@ -11,6 +12,7 @@
   <link rel="manifest" href="/manifest.json">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <meta property="og:type" content="website">
   <meta property="og:title" content="Lucas Ariel Lugo Vera | AI Engineer & Fullstack Developer Portfolio">
@@ -219,7 +221,7 @@
       -webkit-backdrop-filter: blur(20px);
       border-radius: 20px;
       padding: 40px 20px;
-      border: 1px solid transparent; /* SIN BORDE */
+      border: 1px solid transparent;
       box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
       text-align: center;
       position: sticky;
@@ -239,7 +241,7 @@
       border-radius: 50%;
       object-fit: cover;
       margin: 0 auto;
-      border: 2px solid transparent; /* SIN BORDE EN LA FOTO */
+      border: 2px solid transparent; 
     }
 
     .name {
@@ -258,8 +260,6 @@
       text-transform: uppercase;
       margin-top: 4px; 
     }
-
-
 
     .skills {
       display: flex;
@@ -343,7 +343,7 @@
 
     .skill-category {
       background: #111;
-      border: 1.5px solid transparent; /* SIN BORDE POR DEFECTO */
+      border: 1.5px solid transparent; 
       border-radius: 20px;
       padding: 24px;
       transition: transform 0.2s ease, box-shadow 0s, border-color 0s, background-color 0s;
@@ -351,7 +351,6 @@
       cursor: default;
     }
 
-    /* Hovers instantáneos por color (Aparece el borde) */
     .card-ai:hover   { border-color: #0a84ff; box-shadow: 0 8px 24px rgba(10, 132, 255, 0.15); transform: scale(1.02); background: #161616; }
     .card-fe:hover   { border-color: #bf5af2; box-shadow: 0 8px 24px rgba(191, 90, 242, 0.15); transform: scale(1.02); background: #161616; }
     .card-be:hover   { border-color: #30d158; box-shadow: 0 8px 24px rgba(48, 209, 88, 0.15); transform: scale(1.02); background: #161616; }
@@ -398,7 +397,7 @@
       background: rgba(255,255,255,0.05);
       color: #86868b;
       border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 9999px; /* REDONDAS */
+      border-radius: 9999px;
       font-size: 0.78rem;
       font-weight: 500;
       transition: background-color 0s, border-color 0s, color 0s;
@@ -409,7 +408,6 @@
     .card-be:hover   .skill-item { background: rgba(48,209,88,0.08);   border-color: rgba(48,209,88,0.2);   color: #5de87e; }
     .card-data:hover .skill-item { background: rgba(255,159,10,0.08);  border-color: rgba(255,159,10,0.2);  color: #ffbd5a; }
 
-    /* Ajustes para móviles */
     @media (max-width: 900px) {
       .wrap {
         grid-template-columns: 1fr;
@@ -417,7 +415,7 @@
         gap: 48px;
       }
       .left {
-        position: static; /* QUITA EL STICKY EN MÓVILES */
+        position: static; 
       }
       .skills-grid { grid-template-columns: 1fr; }
     }
@@ -479,6 +477,14 @@
 
     @media (max-width: 767px) {
       #mobile-timeline { height: 650px; margin-top: 1rem; }
+    }
+
+    /* Estilos extra para proyectos */
+    .group:hover .group-hover\:scale-110 {
+      transform: scale(1.1);
+    }
+    .group:hover .group-hover\:opacity-100 {
+      opacity: 1;
     }
   </style>
 </head>
@@ -738,8 +744,216 @@ Desde la recolección de datos hasta el despliegue en producción
     </section>
   </div>
 
+  <section id="projects" class="py-20 px-6 max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold mb-4">Featured Projects</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        A showcase of my work in AI, forecasting, and intelligent systems –
+        from financial models to game development and fraud detection.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-8 mb-16">
+
+      <div class="relative overflow-hidden group cursor-pointer h-[350px] w-full rounded-lg shadow-lg">
+        <div class="relative h-full w-full">
+          <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=600&h=400&fit=crop"
+               alt="Sushi App Demand Forecasting"
+               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+          <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 gap-4">
+            <div class="text-center">
+              <h3 class="text-2xl font-bold text-white mb-3">Sushi App Demand Forecasting</h3>
+              <p class="text-white/90 mb-4 leading-relaxed">
+                Built a comprehensive demand forecasting system for a sushi delivery app using LSTM and Prophet models. Achieved 15% improvement in prediction accuracy, reducing food waste and optimizing inventory management.
+              </p>
+            </div>
+            <div class="flex justify-center gap-3">
+              <a href="#" class="inline-flex items-center px-3 py-2 bg-white text-black text-sm font-medium rounded-md hover:bg-gray-200">
+                <i data-lucide="github" class="w-4 h-4 mr-2"></i> GitHub
+              </a>
+              <a href="#" class="inline-flex items-center px-3 py-2 border border-white text-white text-sm font-medium rounded-md hover:bg-white hover:text-black">
+                <i data-lucide="external-link" class="w-4 h-4 mr-2"></i> Demo
+              </a>
+            </div>
+            <div class="flex flex-wrap justify-center gap-2">
+              <span class="px-2 py-1 text-xs font-medium bg-black/50 text-white border border-white/20 rounded-md">Python</span>
+              <span class="px-2 py-1 text-xs font-medium bg-black/50 text-white border border-white/20 rounded-md">LSTM</span>
+              <span class="px-2 py-1 text-xs font-medium bg-black/50 text-white border border-white/20 rounded-md">Prophet</span>
+              <span class="px-2 py-1 text-xs font-medium bg-black/50 text-white border border-white/20 rounded-md">pandas</span>
+              <span class="px-2 py-1 text-xs font-medium bg-black/50 text-white border border-white/20 rounded-md">scikit-learn</span>
+              <span class="px-2 py-1 text-xs font-medium bg-black/50 text-white border border-white/20 rounded-md">Flask</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative overflow-hidden group cursor-pointer h-[350px] w-full rounded-lg shadow-lg">
+        <div class="relative h-full w-full">
+          <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&h=400&fit=crop"
+               alt="ML Trading Bot"
+               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+          <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 gap-4">
+            <div class="text-center">
+              <h3 class="text-2xl font-bold text-white mb-3">ML Trading Bot</h3>
+              <p class="text-white/90 mb-4 leading-relaxed">
+                Algorithmic trading bot using machine learning for market prediction and automated trading. Implemented risk management, backtesting framework, and real-time market data processing.
+              </p>
+            </div>
+            <div class="flex justify-center gap-3">
+              <a href="#" class="inline-flex items-center px-3 py-2 bg-white text-black text-sm font-medium rounded-md hover:bg-gray-200">
+                <i data-lucide="github" class="w-4 h-4 mr-2"></i> GitHub
+              </a>
+              <a href="#" class="inline-flex items-center px-3 py-2 border border-white text-white text-sm font-medium rounded-md hover:bg-white hover:text-black">
+                <i data-lucide="external-link" class="w-4 h-4 mr-2"></i> Demo
+              </a>
+            </div>
+            <div class="flex flex-wrap justify-center gap-2">
+              <span class="px-2 py-1 text-xs font-medium bg-black/50 text-white border border-white/20 rounded-md">Python</span>
+              <span class="px-2 py-1 text-xs font-medium bg-black/50 text-white border border-white/20 rounded-md">scikit-learn</span>
+              <span class="px-2 py-1 text-xs font-medium bg-black/50 text-white border border-white/20 rounded-md">Backtrader</span>
+              <span class="px-2 py-1 text-xs font-medium bg-black/50 text-white border border-white/20 rounded-md">APIs</span>
+              <span class="px-2 py-1 text-xs font-medium bg-black/50 text-white border border-white/20 rounded-md">Risk Management</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative overflow-hidden group cursor-pointer h-[350px] w-full rounded-lg shadow-lg">
+        <div class="relative h-full w-full">
+          <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&h=400&fit=crop"
+               alt="LSTM Housing Price Forecasting"
+               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+          <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 gap-4">
+            <div class="text-center">
+              <h3 class="text-2xl font-bold text-white mb-3">LSTM Housing Price Forecasting</h3>
+              <p class="text-white/90 mb-4 leading-relaxed">
+                Time series forecasting model for housing prices using LSTM networks. Incorporates economic indicators, seasonal patterns, and market sentiment for accurate price predictions.
+              </p>
+            </div>
+            <div class="flex justify-center gap-3">
+              <a href="#" class="inline-flex items-center px-3 py-2 bg-white text-black text-sm font-medium rounded-md hover:bg-gray-200">
+                <i data-lucide="github" class="w-4 h-4 mr-2"></i> GitHub
+              </a>
+              <a href="#" class="inline-flex items-center px-3 py-2 border border-white text-white text-sm font-medium rounded-md hover:bg-white hover:text-black">
+                <i data-lucide="external-link" class="w-4 h-4 mr-2"></i> Demo
+              </a>
+            </div>
+            <div class="flex flex-wrap justify-center gap-2">
+              <span class="px-2 py-1 text-xs font-medium bg-black/50 text-white border border-white/20 rounded-md">Python</span>
+              <span class="px-2 py-1 text-xs font-medium bg-black/50 text-white border border-white/20 rounded-md">LSTM</span>
+              <span class="px-2 py-1 text-xs font-medium bg-black/50 text-white border border-white/20 rounded-md">TensorFlow</span>
+              <span class="px-2 py-1 text-xs font-medium bg-black/50 text-white border border-white/20 rounded-md">Time Series</span>
+              <span class="px-2 py-1 text-xs font-medium bg-black/50 text-white border border-white/20 rounded-md">Economic Data</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative overflow-hidden group cursor-pointer h-[350px] w-full rounded-lg shadow-lg">
+        <div class="relative h-full w-full">
+          <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&h=400&fit=crop"
+               alt="Robot Education Kit - AI Edition"
+               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+          <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 gap-4">
+            <div class="text-center">
+              <h3 class="text-2xl font-bold text-white mb-3">Robot Education Kit - AI Edition</h3>
+              <p class="text-white/90 mb-4 leading-relaxed">
+                Interactive robotics kit for children featuring basic AI integration. Uses modular components and visual programming to teach machine learning concepts through hands-on play.
+              </p>
+            </div>
+            <div class="flex justify-center gap-3">
+              <a href="#" class="inline-flex items-center px-3 py-2 bg-white text-black text-sm font-medium rounded-md hover:bg-gray-200">
+                <i data-lucide="github" class="w-4 h-4 mr-2"></i> GitHub
+              </a>
+              <a href="#" class="inline-flex items-center px-3 py-2 border border-white text-white text-sm font-medium rounded-md hover:bg-white hover:text-black">
+                <i data-lucide="external-link" class="w-4 h-4 mr-2"></i> Demo
+              </a>
+            </div>
+            <div class="flex flex-wrap justify-center gap-2">
+              <span class="px-2 py-1 text-xs font-medium bg-black/50 text-white border border-white/20 rounded-md">Robotics</span>
+              <span class="px-2 py-1 text-xs font-medium bg-black/50 text-white border border-white/20 rounded-md">Python</span>
+              <span class="px-2 py-1 text-xs font-medium bg-black/50 text-white border border-white/20 rounded-md">TensorFlow Lite</span>
+              <span class="px-2 py-1 text-xs font-medium bg-black/50 text-white border border-white/20 rounded-md">Educational AI</span>
+              <span class="px-2 py-1 text-xs font-medium bg-black/50 text-white border border-white/20 rounded-md">STEM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="text-2xl font-bold text-center mb-8">More Projects</h3>
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <div class="relative overflow-hidden group cursor-pointer h-[250px] w-full rounded-lg shadow-lg">
+          <div class="relative h-full w-full">
+            <img src="https://images.unsplash.com/photo-1556438064-2d7646166914?w=600&h=400&fit=crop"
+                 alt="Unity 3D Survival Game"
+                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 gap-3">
+              <div class="text-center">
+                <h4 class="text-xl font-semibold text-white mb-2">Unity 3D Survival Game</h4>
+                <p class="text-white/90 text-sm leading-relaxed">
+                  Developed a 3D survival game inspired by Last Day on Earth using Unity Engine. Features include crafting system, AI enemies, resource management, and multiplayer capabilities.
+                </p>
+              </div>
+              <div class="flex justify-center gap-2">
+                <a href="#" class="inline-flex items-center px-2 py-1 bg-white text-black text-xs font-medium rounded hover:bg-gray-200">
+                  <i data-lucide="github" class="w-3 h-3 mr-1"></i> GitHub
+                </a>
+                <a href="#" class="inline-flex items-center px-2 py-1 border border-white text-white text-xs font-medium rounded hover:bg-white hover:text-black">
+                  <i data-lucide="external-link" class="w-3 h-3 mr-1"></i> Demo
+                </a>
+              </div>
+              <div class="flex flex-wrap justify-center gap-1 mt-2">
+                <span class="px-2 py-0.5 text-xs font-medium bg-black/50 text-white border border-white/20 rounded">Unity</span>
+                <span class="px-2 py-0.5 text-xs font-medium bg-black/50 text-white border border-white/20 rounded">C#</span>
+                <span class="px-2 py-0.5 text-xs font-medium bg-black/50 text-white border border-white/20 rounded">3D Modeling</span>
+                <span class="px-2 py-0.5 text-xs font-medium bg-black/50 text-white border border-white/20 rounded">Game Design</span>
+                <span class="px-2 py-0.5 text-xs font-medium bg-black/50 text-white border border-white/20 rounded">+1</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative overflow-hidden group cursor-pointer h-[250px] w-full rounded-lg shadow-lg">
+          <div class="relative h-full w-full">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop"
+                 alt="Graph-Based Fraud Detection"
+                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 gap-3">
+              <div class="text-center">
+                <h4 class="text-xl font-semibold text-white mb-2">Graph-Based Fraud Detection</h4>
+                <p class="text-white/90 text-sm leading-relaxed">
+                  Fraud detection system using Neo4j graph database and machine learning. Analyzes transaction patterns and relationships to identify suspicious activities with high accuracy.
+                </p>
+              </div>
+              <div class="flex justify-center gap-2">
+                <a href="#" class="inline-flex items-center px-2 py-1 bg-white text-black text-xs font-medium rounded hover:bg-gray-200">
+                  <i data-lucide="github" class="w-3 h-3 mr-1"></i> GitHub
+                </a>
+                <a href="#" class="inline-flex items-center px-2 py-1 border border-white text-white text-xs font-medium rounded hover:bg-white hover:text-black">
+                  <i data-lucide="external-link" class="w-3 h-3 mr-1"></i> Demo
+                </a>
+              </div>
+              <div class="flex flex-wrap justify-center gap-1 mt-2">
+                <span class="px-2 py-0.5 text-xs font-medium bg-black/50 text-white border border-white/20 rounded">Neo4j</span>
+                <span class="px-2 py-0.5 text-xs font-medium bg-black/50 text-white border border-white/20 rounded">Python</span>
+                <span class="px-2 py-0.5 text-xs font-medium bg-black/50 text-white border border-white/20 rounded">Graph Analytics</span>
+                <span class="px-2 py-0.5 text-xs font-medium bg-black/50 text-white border border-white/20 rounded">Cypher</span>
+                <span class="px-2 py-0.5 text-xs font-medium bg-black/50 text-white border border-white/20 rounded">+1</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+      // Inicializar iconos de Lucide
+      lucide.createIcons();
 
       const scrollObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
